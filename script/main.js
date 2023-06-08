@@ -80,7 +80,7 @@ function registrarConvenio(){
     let duracion=document.getElementById("duracion").value
     let empresa=document.getElementById("empresa").value
     let estado =document.getElementById("estado").value
-    let link =document.getElementById("estado").value
+    let link =document.getElementById("link").value
     const convenio={
         nombre,
         sector:sector,
@@ -93,11 +93,13 @@ function registrarConvenio(){
         link,
         fechaRegistro:fechaInicio
     }
+    
     console.log(convenio)
     saveConvenio(convenio)
     .then(response=>response.json())
     .then(data=>{
         console.log(data)
+        window.location.href="../index.html"
     })
     .catch(err=>{
         console.log(err)
